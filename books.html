@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Parth Library — Books</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="topbar">
+      <h2>Books</h2>
+      <nav><a href="index.html">Home</a> · <a href="students.html">Students</a> · <a href="status.html">Status</a></nav>
+    </header>
+
+    <section class="card">
+      <div class="card-header">
+        <h3>Create / Update Book</h3>
+      </div>
+      <div class="card-body">
+        <form id="book-form">
+          <input type="hidden" id="book-id">
+          <label>Title<input id="book-title" required placeholder="E.g. The Art of PHP"></label>
+          <label>Author<input id="book-author" placeholder="Author name"></label>
+          <label>ISBN<input id="book-isbn" placeholder="Optional"></label>
+          <div class="form-row">
+            <button class="btn primary" type="submit">Save Book</button>
+            <button id="book-reset" class="btn ghost" type="button">Reset</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-header"><h3>Available Books <span class="pill small" id="books-count">0</span></h3></div>
+      <div class="card-body">
+        <div class="search-row">
+          <input id="books-search" placeholder="Search books by title, author or ISBN">
+          <button id="refresh-books" class="btn ghost">Refresh</button>
+        </div>
+        <table id="books-table" class="table">
+          <thead><tr><th>Title</th><th>Author</th><th>ISBN</th><th>Actions</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Allocate modal -->
+    <div id="alloc-modal" class="modal-backdrop">
+      <div class="modal">
+        <div class="modal-header">
+          <strong>Allocate Book</strong>
+          <button id="alloc-close" class="icon-btn">✕</button>
+        </div>
+        <div>
+          <div id="alloc-book-title" class="small muted"></div>
+          <label>Choose student
+            <select id="alloc-student-select"></select>
+          </label>
+          <div class="form-row">
+            <button id="alloc-confirm" class="btn primary">Allocate</button>
+            <button id="alloc-cancel" class="btn ghost">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>

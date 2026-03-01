@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Parth Library — Students</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="topbar">
+      <h2>Students</h2>
+      <nav><a href="index.html">Home</a> · <a href="books.html">Books</a> · <a href="status.html">Status</a></nav>
+    </header>
+
+    <section class="card">
+      <div class="card-header"><h3>Create / Update Student</h3></div>
+      <div class="card-body">
+        <form id="student-form">
+          <input type="hidden" id="student-id">
+          <label>Name<input id="student-name" required placeholder="Student full name"></label>
+          <label>Email<input id="student-email" type="email" placeholder="student@example.com"></label>
+          <div class="form-row">
+            <button class="btn primary" type="submit">Save Student</button>
+            <button id="student-reset" class="btn ghost" type="button">Reset</button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="card-header"><h3>Students List <span class="pill small" id="students-count">0</span></h3></div>
+      <div class="card-body">
+        <div class="search-row">
+          <input id="students-search" placeholder="Search students by name or email">
+          <button id="refresh-students" class="btn ghost">Refresh</button>
+        </div>
+        <table id="students-table" class="table">
+          <thead><tr><th>Name</th><th>Email</th><th>Books</th><th>Actions</th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>
